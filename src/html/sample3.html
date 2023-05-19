@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>sample3</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!-- Style for Markdown -->
+  <style>
+  .md2html-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .md2html-container > h1:first-child {
+    margin-top: 0;
+  }
+  body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url("../../images/modules/styleguide/para.png") no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url("../../images/modules/pulls/dirty-shade.png") repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0; }
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  border-collapse: collapse;
+  padding: 0; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="md2html-container">
+<header>
+<h1 class="title">sample3</h1>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#git-におけるコミットログメッセージ例文集-100"
+id="toc-git-におけるコミットログメッセージ例文集-100">git
+におけるコミットログ/メッセージ例文集 100</a></li>
+<li><a href="#はじめに" id="toc-はじめに">はじめに</a></li>
+<li><a href="#用例集" id="toc-用例集">用例集</a>
+<ul>
+<li><a href="#オプションやフラグメニューを追加した"
+id="toc-オプションやフラグメニューを追加した">オプションやフラグ、メニューを追加した</a></li>
+<li><a href="#ファイルを追加した"
+id="toc-ファイルを追加した">ファイルを追加した</a></li>
+<li><a href="#メソッドや機能を追加した"
+id="toc-メソッドや機能を追加した">メソッドや機能を追加した</a></li>
+<li><a href="#実装を別のものへ切り替えた"
+id="toc-実装を別のものへ切り替えた">実装を別のものへ切り替えた</a></li>
+<li><a href="#新しく何かに対応した機能上の制約を取り払った"
+id="toc-新しく何かに対応した機能上の制約を取り払った">新しく何かに対応した/機能上の制約を取り払った</a></li>
+<li><a href="#何かを使うようにした"
+id="toc-何かを使うようにした">何かを使うようにした</a></li>
+<li><a href="#より好ましい実装に改良した"
+id="toc-より好ましい実装に改良した">より好ましい実装に改良した</a></li>
+<li><a href="#何かを出来ないしないようにした"
+id="toc-何かを出来ないしないようにした">何かを出来ない/しないようにした</a></li>
+<li><a href="#オブジェクトの内容や挙動を確認しやすくした"
+id="toc-オブジェクトの内容や挙動を確認しやすくした">オブジェクトの内容や挙動を確認しやすくした</a></li>
+<li><a href="#assert-を追加した" id="toc-assert-を追加した">Assert
+を追加した</a></li>
+<li><a href="#不要なコードを除去した"
+id="toc-不要なコードを除去した">不要なコードを除去した</a></li>
+<li><a href="#コードを移動した"
+id="toc-コードを移動した">コードを移動した</a></li>
+<li><a href="#名前を修正した"
+id="toc-名前を修正した">名前を修正した</a></li>
+<li><a href="#小さなバグやタイポを修正した-警告を潰した"
+id="toc-小さなバグやタイポを修正した-警告を潰した">小さなバグやタイポを修正した,
+警告を潰した</a></li>
+<li><a href="#バグや好ましくない挙動を修正した"
+id="toc-バグや好ましくない挙動を修正した">バグや好ましくない挙動を修正した</a></li>
+<li><a href="#テストコメントドキュメントを追加した"
+id="toc-テストコメントドキュメントを追加した">テスト、コメント、ドキュメントを追加した</a></li>
+<li><a href="#テストを削除した"
+id="toc-テストを削除した">テストを削除した</a></li>
+<li><a href="#テストコメントを修正した"
+id="toc-テストコメントを修正した">テスト、コメントを修正した</a></li>
+<li><a href="#ドキュメントを修正した"
+id="toc-ドキュメントを修正した">ドキュメントを修正した</a></li>
+</ul></li>
+<li><a href="#表現傾向とまとめ"
+id="toc-表現傾向とまとめ">表現傾向とまとめ</a>
+<ul>
+<li><a href="#余談" id="toc-余談">余談</a></li>
+</ul></li>
+<li><a href="#おわりに" id="toc-おわりに">おわりに</a></li>
+</ul>
+</nav>
+<p><a href="http://anond.hatelabo.jp/20160725092419">git
+におけるコミットログ/メッセージ例文集 100</a>の転載</p>
+<h3
+id="例文を組み込んだ-alfred-workflow-を作りました-alfred-git-commit-message-example">例文を組み込んだ
+Alfred Workflow を作りました: <a
+href="https://github.com/mono0926/alfred-git-commit-message-example">Alfred
+Git Commit Message Example</a></h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/mono0926/alfred-git-commit-message-example/master/assets/example.gif"
+alt="Gif Example" />
+<figcaption aria-hidden="true">Gif Example</figcaption>
+</figure>
+<p>以下転載:</p>
+<hr />
+<h1 id="git-におけるコミットログメッセージ例文集-100">git
+におけるコミットログ/メッセージ例文集 100</h1>
+<p>私はコミットログの書き方に悩む英語の苦手な人間である。実際、似たような人は世の中に結構いるようで、頻出単語を集計したりまとめたものは既にあって役に立つのだけれど、これらはあくまで単語の話であり、具体的な文を構成する過程でやっぱり困る部分がかなりあった。</p>
+<p>要するに、どういう時にどういう文が使われているのか、ということを示した例文集が欲しいのである。ググると他にも「例文集があればいいのに」みたいな声はあるくせして、しかし誰も作ろうとしない。何なんだお前ら。それじゃ私が楽できないじゃないか。</p>
+<p>仕方なく自分でまとめたので、増田に垂れ流しておく。</p>
+<h1 id="はじめに">はじめに</h1>
+<p>ここで挙げているコミットログは全て実際のコミットログからの転載である。当然ながら各コミットログの著作権はそれぞれの書き手にある。いずれも各英文でググれば出てくるし、フェアユースの範囲なら許してくれるだろうと考え名前とプロジェクト名は割愛したが、ここにお詫びと感謝を述べておきたい。</p>
+<p>抽出条件だが、参考にできそうなコミットログを多く含んでいそうなリポジトリを
+GitHub の STAR
+の多い方からざっと目で見て適当に選び、それぞれ最新コミットから 5000
+件抽出した（あわせて前処理として、コミットログ冒頭のタグ情報は消去した）。</p>
+<p>結果として対象としたリポジトリは以下の通り。</p>
+<ul>
+<li>swift</li>
+<li>atom</li>
+<li>electron</li>
+<li>rails</li>
+<li>tensorflow</li>
+</ul>
+<p>atom のみ 5400 件抽出していたため、計 25400
+件のコミットログがベースである。このうち、以下の条件に合致するものは参考例にすべきでないとして一律排除した。</p>
+<ul>
+<li>ピリオドで終わっているもの(4535 件)</li>
+<li>小文字で始まっているもの(2242 件)</li>
+<li>過去形, 現在進行形で始まっているもの(1044 件)</li>
+<li>Merge/Revert で始まっているもの(6555 件)</li>
+<li>絵文字を使っているもの(2171 件)</li>
+<li>その他バージョン番号のみ等、参考にならないと判断したもの(313
+件)</li>
+</ul>
+<p>こうして残った 8540
+件を眺めながら、適当に切り出したのがこの用例集である。個人的に「うーんこの」と思った表現も、散見される場合は載せた。ということで、以下用例を羅列していく。</p>
+<h1 id="用例集">用例集</h1>
+<h2
+id="オプションやフラグメニューを追加した">オプションやフラグ、メニューを追加した</h2>
+<ul>
+<li>Add -enable-experimental-nested-generic-types frontend flag</li>
+<li>Add –main-process flag to run specs in the main process</li>
+<li>Add Throws flag and ThrowsLoc to AbstractFunctionDecl</li>
+<li>Add “event” parameter for “click” handler of MenuItem</li>
+<li>Add File &gt; Exit menu on Windows</li>
+</ul>
+<h2 id="ファイルを追加した">ファイルを追加した</h2>
+<ul>
+<li>Add npm start script</li>
+<li>Add build script</li>
+<li>Add SkUserConfig.h with blank SkDebugf macro</li>
+</ul>
+<h2 id="メソッドや機能を追加した">メソッドや機能を追加した</h2>
+<ul>
+<li>Add TypeLowering::hasFixedSize()</li>
+<li>Add overflow scrolling</li>
+<li>Add convenience API for demangling</li>
+<li>Add a typealias to avoid a build ordering dependency between
+projects</li>
+<li>Add a helper method mayHaveOpenedArchetypeOperands to
+SILInstruction</li>
+</ul>
+<h2 id="実装を別のものへ切り替えた">実装を別のものへ切り替えた</h2>
+<ul>
+<li>Use args.resourcePath instead of args.devResourcePath</li>
+<li>Use arrays instead of while loops</li>
+<li>Use auto instead of repeating explicit class names</li>
+<li>Use weak pointer instead of manual bookkeeping</li>
+<li>Change all uses of ‘CInt’ to ‘Int32’ in the SDK overlay</li>
+<li>Change Integer#year to return a Fixnum instead of a Float to improve
+consistency</li>
+</ul>
+<h2
+id="新しく何かに対応した機能上の制約を取り払った">新しく何かに対応した/機能上の制約を取り払った</h2>
+<ul>
+<li>Add support for closure contexts to readMetadataFromInstance()</li>
+<li>Add support for activating and deactivating package-specific
+keymaps</li>
+<li>Add support for launching HTML files directly</li>
+<li>Add support for allocators that require tensors with zero</li>
+<li>Make it possible to call <code>reflect</code> multiple times</li>
+<li>Make it possible to set a data type for variables that come out of
+constants</li>
+<li>Allow atom-pane to be shrunk independently of its contents’
+width</li>
+<li>Allow null TextEditorComponent::domNode during visibility check</li>
+</ul>
+<h2 id="何かを使うようにした">何かを使うようにした</h2>
+<ul>
+<li>Use const for util require</li>
+<li>Use FoldingSetNode for ProtocolType</li>
+<li>Use unique text editor title in window and tab titles</li>
+<li>Use an empty object if metadata is ~null</li>
+<li>Use target_link_libraries for fat executable dependencies</li>
+<li>Use existing flatMapToOptionalTests dataset</li>
+</ul>
+<h2 id="より好ましい実装に改良した">より好ましい実装に改良した</h2>
+<ul>
+<li>Make the clone function more generic</li>
+<li>Make IO faster for v8 compile cache</li>
+<li>Make model constructor argument to addViewProvider optional</li>
+<li>Make Browser::Quit more robust</li>
+<li>Make Menu.getApplicationMenu() public</li>
+<li>Improve incompatible native module error message</li>
+<li>Improve readability of multi-line command</li>
+<li>Improve folds behavior when duplicating lines</li>
+<li>Improve deprecated message on webPreferences options</li>
+</ul>
+<h2
+id="何かを出来ないしないようにした">何かを出来ない/しないようにした</h2>
+<ul>
+<li>Don’t bail reading a metadata instance if swift_isaMask isn’t
+available</li>
+<li>Don’t exit until the parent asks for an instance</li>
+<li>Don’t include Parent pointer in Nominal/BoundGeneric TypeRef
+uniquing</li>
+<li>Don’t use MatchesExtension for matching filters</li>
+<li>Don’t use ES6 class for AutoUpdater windows class</li>
+<li>Don’t use MatchesExtension for matching filters</li>
+<li>Avoid <code>distinct</code> if a subquery has already
+materialized</li>
+<li>Avoid infinite recursion when bad values are passed to tz aware
+fields</li>
+</ul>
+<h2
+id="オブジェクトの内容や挙動を確認しやすくした">オブジェクトの内容や挙動を確認しやすくした</h2>
+<ul>
+<li>Emit capture descriptors in their own section</li>
+<li>Emit field metadata for <span class="citation"
+data-cites="objc">@objc</span> classes</li>
+<li>Emit reflection info for protocols</li>
+</ul>
+<h2 id="assert-を追加した">Assert を追加した</h2>
+<ul>
+<li>Add assert for role with app name in label</li>
+<li>Add assertions for no available bookmark</li>
+<li>Add asserts for properties</li>
+</ul>
+<h2 id="不要なコードを除去した">不要なコードを除去した</h2>
+<ul>
+<li>Remove some dead code</li>
+<li>Remove some unused enum declaration</li>
+<li>Remove unused variable</li>
+<li>Remove unnecessary line feeds</li>
+<li>Remove trailing whitespace</li>
+<li>Remove debug statement</li>
+<li>Remove redundant mapType{Into,OutOf}Context() calls</li>
+</ul>
+<h2 id="コードを移動した">コードを移動した</h2>
+<ul>
+<li>Move function signature analysis to a Util</li>
+<li>Move markInvalidGenericSignature() to a method on TypeChecker</li>
+<li>Move diagnostic for stored properties in protocols from type
+checking to validation</li>
+<li>Move Doxygen converter into a proper MarkupASTNode visitor</li>
+<li>Move Module require to top</li>
+</ul>
+<h2 id="名前を修正した">名前を修正した</h2>
+<ul>
+<li>Rename environment -&gt; environmentHelpers</li>
+<li>Rename watchProjectPath to watchProjectPaths</li>
+<li>Rename generic arguments</li>
+<li>s/grammarName/grammar</li>
+<li>fullVersion -&gt; writeFullVersion</li>
+</ul>
+<h2
+id="小さなバグやタイポを修正した-警告を潰した">小さなバグやタイポを修正した,
+警告を潰した</h2>
+<ul>
+<li>Fix typos</li>
+<li>Fix a typo</li>
+<li>Fix a test</li>
+<li>Fix typo in DevTools Extensions tutorial</li>
+<li>Fix DownloadingState typo</li>
+<li>Fix includes order</li>
+<li>Fix mistake in tvOS availability</li>
+<li>Fix cpplint warnings</li>
+<li>Fix wrong markdown</li>
+<li>Add missing return</li>
+<li>Add missing period in comment</li>
+</ul>
+<h2
+id="バグや好ましくない挙動を修正した">バグや好ましくない挙動を修正した</h2>
+<ul>
+<li>Fix a memory leak in FSO</li>
+<li>Fix lifetime issues in ManagedBuffer.value</li>
+<li>Fix mangling for nested generic types</li>
+<li>Fix memory corruption in another circularity check</li>
+<li>Fix thread-unsafety in Process.Argument initialization</li>
+<li>Fix “Object has been destroyed” error in “page-title-updated”
+event</li>
+<li>Make Error.prepareStackTrace read-only (again)</li>
+<li>Make string slicing tests standalone</li>
+<li>Make sure showing success dialogs works correctly</li>
+<li>Make sure to emit closure bodies only once</li>
+<li>Make sure all native resources get freed on exit</li>
+<li>Make sure temp file will be cleaned up when base::Move fails</li>
+</ul>
+<h2
+id="テストコメントドキュメントを追加した">テスト、コメント、ドキュメントを追加した</h2>
+<ul>
+<li>Add tests for pending pane items</li>
+<li>Add validation test for projecting existentials</li>
+<li>Add a basic test for opening an editor in largeFileMode if &gt;=
+2MB</li>
+<li>Add specs for moveSelectionLeft()</li>
+<li>Add failing spec for Menu.buildFromTemplate</li>
+<li>Add comment about map key/values</li>
+<li>Add TODO about blinkFeatures -&gt; enableBlinkFeatures</li>
+<li>Add a design-decisions section to the CONTRIBUTING guide</li>
+<li>Add style.less examples</li>
+<li>Add docs for app.getLocale()</li>
+<li>Add documentation for –proxy-bypass-list</li>
+</ul>
+<h2 id="テストを削除した">テストを削除した</h2>
+<ul>
+<li>Remove a redundant test</li>
+<li>Remove an empty test</li>
+</ul>
+<h2 id="テストコメントを修正した">テスト、コメントを修正した</h2>
+<ul>
+<li>Fix comment</li>
+<li>Fix outdated comment</li>
+<li>Fix failing specs on Windows</li>
+<li>Fix PersistentVector test for powerpc64{le}</li>
+<li>Update specs for deferred activation hooks</li>
+<li>Update successor/predecessor in validation tests</li>
+<li>Update some tests to use LifetimeTracked instead of hand-rolled
+canaries</li>
+</ul>
+<h2 id="ドキュメントを修正した">ドキュメントを修正した</h2>
+<ul>
+<li>Update README.md</li>
+<li>Update docs for marker callback</li>
+<li>Update documentation for mark*Position</li>
+<li>Update link to solarized-dark-syntax</li>
+<li>Improve documentation of <code>ses.cookies.set()</code></li>
+<li>Improve readability in CSRF section of guide</li>
+<li>Improve spec description</li>
+</ul>
+<h1 id="表現傾向とまとめ">表現傾向とまとめ</h1>
+<p>以上の用例をふまえ、今回の参考ログ 8540
+件から先頭の単語を出現回数で並べると次のようになった。</p>
+<table>
+<thead>
+<tr class="header">
+<th>単語</th>
+<th>出現回数</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Add</td>
+<td>1149</td>
+</tr>
+<tr class="even">
+<td>Fix</td>
+<td>1014</td>
+</tr>
+<tr class="odd">
+<td>Update</td>
+<td>584</td>
+</tr>
+<tr class="even">
+<td>Remove</td>
+<td>566</td>
+</tr>
+<tr class="odd">
+<td>Use</td>
+<td>382</td>
+</tr>
+<tr class="even">
+<td>Don’t</td>
+<td>260</td>
+</tr>
+<tr class="odd">
+<td>Make</td>
+<td>228</td>
+</tr>
+<tr class="even">
+<td>Move</td>
+<td>178</td>
+</tr>
+<tr class="odd">
+<td>Change</td>
+<td>103</td>
+</tr>
+<tr class="even">
+<td>Rename</td>
+<td>85</td>
+</tr>
+<tr class="odd">
+<td>Improve</td>
+<td>76</td>
+</tr>
+<tr class="even">
+<td>Avoid</td>
+<td>68</td>
+</tr>
+<tr class="odd">
+<td>Allow</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>Implement</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td>Handle</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+<p>コミットログの基本形はもちろん動詞 +
+名詞である。名詞は固有名詞、複数形、不可算名詞が多いが、単数形の場合の冠詞は
+a が使われるか、あるいは省略される。the はまず使われない。</p>
+<p>何かを追加した、という表現では非常に広く Add
+が使われる。メソッドからテスト、ドキュメントに至るまで大概これでまかなえる。</p>
+<p>一方、何かを修正した、という表現では広く Fix が使われる。「何か」は
+typo や crash
+といった単語からメソッド名まで幅広い名詞を取るが、動名詞はあまり取らないのと、that
+節は取らないのでその点は注意が必要である。</p>
+<p>Fix
+は「何かが正しく動くようにした」ことを示し、正しい動作内容が何かを説明しない。そこで正しい動作内容に言及したい場合は
+Make sure が使われる（こちらは that 節が取れる）。ただし Fix
+よりもニュアンス的に重い表現と思われ、Fix を使わず Make sure
+ばかり使うのはちょっとキモいのではないかと思う（Ensure
+はさらに重い表現っぽい）。</p>
+<p>また、Fix は typo
+以外でのドキュメント修正に対して使われることは稀である。対して Update
+はドキュメント、コメント、テストに使われ、本体のコードの修正に対しては使われない。本体コードの修正にあわせてテストも更新したなら
+Update が使われる。ただ、テスト機構それ自体のバグを修正したなら Fix
+である。</p>
+<p>無駄な何かを単純に除去したなら Remove
+を使う。これまでのもの(A)から別のもの(B)に切り替えたのであれば Use B
+instead of A か Change A to B
+が使われる。新たに何かを利用するようにしたのであれば Use
+を、利用を取りやめた場合は Don’t use を使うことが多い。</p>
+<p>何かをしないようにしたなら Don’t を、内部実装の効率化なら Make A +
+比較級/形容詞 か Improve が使われる。</p>
+<p>中身の変更を伴わない単なる名前の変更なら Rename A to
+B、コードや機能の論理上の場所を移動させたなら Move A to B である。</p>
+<p>この辺はリファクタリングと呼ばれる行為と思うが、Refactor
+というぼんやりした動詞はあまり使われず、このように変更内容の種類に応じて動詞が使い分けられている。</p>
+<h2 id="余談">余談</h2>
+<p>コミットログには Why を書くべきだ、というのを何かで見かけたので
+because とか since を使ったログがどの程度あるかを調べたが、8540 件のうち
+22
+件だった。基本的に短く、シンプルに、一目で意味が取れるログが好まれる傾向がある。例えば
+get rid of とか 2 件しか使われておらず、圧倒的に remove である。</p>
+<p>一方で、シンプルな単語だけど開始単語としては使われないものもある。例えば次のような単語である。Expand(9)、Extend(8)、Print(5)、Optimize(5)、Publish(4)、Append(4)、Modify(3)、Manage(2)、Revise(2)、Dump(2)、Insert(2)、Migrate(2)、Enhance(1)、Edit(1)
+。いずれもカッコ内は 8540
+件に対する冒頭での登場回数である。結局、より一般的で平易な単語で表せたり、Refactor
+同様に抽象度が高すぎると使われないのだろう。</p>
+<h1 id="おわりに">おわりに</h1>
+<p>8000
+件もログを見たおかげで、迷いなくコミットメッセージが思いつくようになったのが個人的には今回書いてて最大の収穫だった。たぶんカンニングペーパーを作る行為それ自体が効率のいい学習になるという話と同じだと思う。</p>
+<p>このまとめも 100
+以上用例を転載してあるので、それを読むだけでも多少は効果があるんじゃないかと思う。同じようにコミットログ書きたくねぇなぁ英語わっかんねぇなぁと思っている人にとって、何か役に立つところがあれば幸いである。</p>
+<p>from
+https://gist.github.com/mono0926/e6ffd032c384ee4c1cef5a2aa4f778d7</p>
+  </div>
+</body>
+</html>

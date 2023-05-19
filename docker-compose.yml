@@ -1,0 +1,10 @@
+services:
+  pandoc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - type: bind
+        source: ./src
+        target: /pandoc

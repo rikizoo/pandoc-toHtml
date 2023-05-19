@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>sample2</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!-- Style for Markdown -->
+  <style>
+  .md2html-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .md2html-container > h1:first-child {
+    margin-top: 0;
+  }
+  body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url("../../images/modules/styleguide/para.png") no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url("../../images/modules/pulls/dirty-shade.png") repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0; }
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  border-collapse: collapse;
+  padding: 0; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="md2html-container">
+<header>
+<h1 class="title">sample2</h1>
+</header>
+<h3 id="エンジニア向け研修">エンジニア向け研修</h3>
+<ul>
+<li>AI Shift
+<ul>
+<li><a href="https://www.ai-shift.co.jp/techblog/1980">社内 SQL
+研修のために作った資料を公開します</a> - (2021/06/21)</li>
+</ul></li>
+<li>CARTA HOLDINGS（旧 VOYAGE GROUP）
+<ul>
+<li><a
+href="https://techblog.cartaholdings.co.jp/entry/open-ai-api-hackathon">技術広報が新卒研修<Open AI ハッカソン>をスパイしてみた</a>
+- (2023/04/11)</li>
+<li><a
+href="https://techblog.cartaholdings.co.jp/entry/test-driven-development-training-2023"><span
+class="citation" data-cites="t_wada">@t_wada</span>
+に学ぶテスト駆動開発【CARTA 23 新卒研修】</a> - (2023/04/19)</li>
+</ul></li>
+<li>Classi
+<ul>
+<li><a
+href="https://tech.classi.jp/entry/2021/05/20/110000">当たり前にリリースしていく
+~ 新卒研修編</a> - (2021/05/20)</li>
+<li><a
+href="https://tech.classi.jp/entry/2021/12/07/120000">リモートワークのための質問力向上研修を実施しました</a>
+- (2021/12/07)</li>
+</ul></li>
+<li>CyberZ
+<ul>
+<li><a
+href="https://note.com/cyberz_cto/n/n26f535d6c575">良いコードとは何か -
+エンジニア新卒研修 スライド公開</a> - (2021/04/27)</li>
+</ul></li>
+<li>DMM.com(旧 DMM.com ラボ含む)
+<ul>
+<li><a
+href="https://dmmlabotech.hatenablog.jp/entry/2016/08/24/190442">ＤＭＭ.com
+ラボ 16 新卒エンジニア研修</a> - (2016/08/24)</li>
+<li><a
+href="https://inside.dmm.com/entry/2019/04/25/engineer-training-2019">DMM.com
+の新卒技術研修がスタートしました！</a> - (2019/04/25)</li>
+<li><a
+href="https://inside.dmm.com/entry/2019/10/03/engineer-training-2019">DMM.com
+19 新卒技術研修が終わりました</a> - (2019/10/03)</li>
+<li><a
+href="https://inside.dmm.com/entry/2020/04/28/engineer-training-2020">DMM.com
+2020 新卒技術研修が始まりました</a> - (2020/04/28)</li>
+<li><a
+href="https://inside.dmm.com/entry/2021/05/10/engineer-training-2021">2021
+年度 DMM の新卒技術研修が始まりました。</a> - (2021/05/10)</li>
+<li><a
+href="https://inside.dmm.com/entry/2021/08/31/engineer-training-2021">2021
+年度 DMM の新卒技術研修が終わりました。</a> - (2021/08/31)</li>
+</ul></li>
+<li>FLINTERS（旧セプテーニ・オリジナル）
+<ul>
+<li><a href="http://labs.septeni.co.jp/entry/2017/08/15/121003">2017
+年セプテーニ・オリジナルの新人研修について</a> - (2017/08/15)</li>
+<li><a
+href="https://speakerdeck.com/taketora/2018nian-seputeniorizinaru-xin-zu-yan-xiu-nituite-1">2018
+年セプテーニ・オリジナル 新卒研修について</a> - (2018/06/20)</li>
+<li><a href="https://labs.septeni.co.jp/entry/2020/06/26/190000">2020
+年度新人研修をアップデートした話</a> - (2020/06/26)</li>
+</ul></li>
+<li>FLINTERS BASE
+<ul>
+<li><a
+href="https://blog.flinters-base.co.jp/entry/2022/03/07/130000">リモートでの研修で学びを最大化するには？</a>
+- (2022/03/07)</li>
+</ul></li>
+<li>Fringe81
+<ul>
+<li><a
+href="https://qiita.com/minakawa-daiki/items/5fc6efbb2244f6f1c19c">新卒のセキュリティ研修用に使用したアプリケーションを公開します！【2020
+年度】</a> - (2020/04/16)</li>
+</ul></li>
+<li>GMO アドパートナーズ
+<ul>
+<li><a
+href="https://techblog.gmo-ap.jp/2020/06/15/gtb_devops/">新卒研修で
+DevOps の歴史を語った件</a> - (2020/06/15)</li>
+</ul></li>
+<li>GMO インターネット
+<ul>
+<li><a href="https://nrslib.com/event-after-introduction-to-web/">「Web
+基礎」という講義をしました</a> - (2019/05/17)</li>
+</ul></li>
+<li>GMO ペパボ
+<ul>
+<li><a href="https://gist.github.com/hsbt/5318109">2013
+年の新卒研修メニュー</a></li>
+<li><a
+href="http://www.hsbt.org/diary/20130522.html#p01">ペパボ新卒エンジニアの研修を開始している</a>
+- (2013/05)</li>
+<li><a
+href="http://udzura.hatenablog.jp/entry/2014/08/01/200114">第二新卒研修をしていた</a>
+- (2014/08)</li>
+<li><a
+href="https://kentarokuribayashi.com/journal/2014/08/23/2014-08-23-145417">GMO
+ペパボのエンジニア新人研修 #lldiver</a> - (2014/08)</li>
+<li><a
+href="http://blog.hifumi.info/2015/06/14/pepabo-engineer-training-2015/">ペパボ新卒エンジニア研修
+2015 が始まっています</a> - (2015/06)</li>
+<li><a
+href="http://blog.hifumi.info/2015/07/20/pepabo-web-operation-training-2015/">ペパボ新卒エンジニア研修
+2015・Web オペレーション研修が始まっています</a> - (2015/07)</li>
+<li><a
+href="https://tech.pepabo.com/2016/10/18/engineer-training-2016/">GMO
+ペパボの新卒エンジニア研修の様子 &amp; テキストを公開します</a> -
+(2016/10/18)</li>
+<li><a
+href="https://tech.pepabo.com/2017/08/08/engineer-training-2017-vol1/">ペパボの新卒エンジニア研修
+2017 Vol.1</a> - (2017/08/08)</li>
+<li><a
+href="https://tech.pepabo.com/2019/07/04/newcomer-train-2019/">新卒エンジニア研修
+2019 Vol.1</a> - (2019/07/04)</li>
+<li><a
+href="https://hr.pepabo.com/report/2020/04/24/3830">フルオンラインで行った、ペパボのリモート新卒研修をまるっとお見せします！</a>
+- (2020/04/24)</li>
+<li><a
+href="https://rand.pepabo.com/article/2020/07/22/machine-learning-introduction/?s=09">ペパボ研究所による新卒エンジニア向け機械学習研修</a>
+- (2020/07/22)</li>
+<li><a
+href="https://tech.pepabo.com/2020/09/09/newbie-training-2020/">ペパボの新卒研修で利用した資料を公開します</a>
+- (2020/09/09)</li>
+<li><a
+href="https://hr.pepabo.com/report/2021/05/14/5629">リモートワークでも安心して働けるようサポートしたい！2021
+年ペパボ入社式＆新卒研修レポート</a> - (2021/05/14)</li>
+<li><a
+href="https://tech.pepabo.com/2021/09/21/newbie-training-2021/">GMO
+ペパボのエンジニア研修 2021 の資料を公開します</a> - (2021/09/21)</li>
+<li><a
+href="https://rand.pepabo.com/article/2022/08/24/ml-training-report/">新卒エンジニア向け機械学習研修
+2022〜機械学習と再帰化〜</a> - (2022/08/24)</li>
+</ul></li>
+<li>KADOKAWA Connected
+<ul>
+<li><a href="https://engineering.kdx.co.jp/entry/2021/05/17/180000">2021
+年新入社員研修のはなし</a> - (2021/05/17)</li>
+<li><a
+href="https://engineering.kdx.co.jp/entry/2021/07/16/163000">KADOKAWA
+Connected ではじめての新卒チーム開発研修をフルリモートでやってみた話</a>
+- (2021/07/16)</li>
+</ul></li>
+<li>Klab
+<ul>
+<li><a
+href="http://klabgames.tech.blog.jp.klab.com/archives/1058648463.html">新卒研修で
+Go 研修を担当しました</a> - (2016/06/23)</li>
+</ul></li>
+<li>LINE
+<ul>
+<li><a
+href="https://engineering.linecorp.com/ja/blog/introducing-line-new-graduate-engineering-technical-training/">1
+ヶ月で LINE クローンを開発！LINE の新卒エンジニア技術研修をご紹介</a> -
+(2017/05/19)</li>
+<li><a
+href="https://engineering.linecorp.com/ja/blog/training-to-make-a-line-clone/">LINE
+の新卒エンジニアが入社後どのような数ヶ月を過ごすのかご紹介！研修のお題は「LINE
+クローンを作る」</a> - (2018/06/11)</li>
+<li><a
+href="https://engineering.linecorp.com/ja/blog/new-graduate-engineer-front-end-v1/">LINE
+新卒エンジニアのしごと〜5 月のフロントエンドエンジニア編〜</a> -
+(2019/06/28)</li>
+<li><a
+href="https://engineering.linecorp.com/ja/blog/new-employee-training-on-zoom/">約
+100 人での Zoom
+新入社員研修で得られたリモート研修・ワークショップの知見を共有します！</a>
+- (2020/05/29)</li>
+<li><a
+href="https://engineering.linecorp.com/ja/blog/how-to-create-new-employees-training-program/">受講者の声から紐解く、現場で実践してもらえる新入社員研修づくり</a>
+- (2020/08/07)</li>
+</ul></li>
+<li>Quora
+<ul>
+<li><a
+href="https://wazanovajp.tumblr.com/post/66072822397/quora">Quora:
+新しい社員の迎え方について</a></li>
+</ul></li>
+<li>Sansan
+<ul>
+<li><a
+href="https://buildersbox.corp-sansan.com/entry/2020/06/19/110000">2020
+年卒の DSOC 研究開発部 の新卒研修を実施しました！</a> -
+(2020/06/19)</li>
+<li><a
+href="https://jp.corp-sansan.com/mimi/2021/04/newgraduates2021.html">2021
+年新卒研修を実施しました。</a> - (2021/04/30)</li>
+</ul></li>
+<li>Speee
+<ul>
+<li><a href="http://tech.speee.jp/entry/2016/07/15/193421">Speee
+の新卒エンジニア研修について</a> - (2016/07/15)</li>
+<li><a href="https://tech-camp.in/note/6911/">Speee
+が新卒エンジニア研修を TECH::CAMP に託した「狙い」とは？</a> -
+(2016/07/18)</li>
+</ul></li>
+<li>アマゾン ウェブ サービス ジャパン
+<ul>
+<li><a href="https://note.com/jagaimogmog/n/nd644a0144d18">新卒で AWS
+に入るという選択肢 - Part 1.</a> - (2022/06/15)</li>
+</ul></li>
+<li>インフィニットループ
+<ul>
+<li><a
+href="https://www.infiniteloop.co.jp/blog/2021/09/unko/">新卒向け研修資料「テスト文字列に”うんこ”と入れるな」を公開しました</a>
+- (2021/09/10)</li>
+<li><a
+href="https://www.infiniteloop.co.jp/blog/2021/10/2021freshmantraining/">2021
+年新入社員研修のご紹介</a> - (2021/10/07)</li>
+</ul></li>
+<li>ウォンテッドリー
+<ul>
+<li><a
+href="https://www.wantedly.com/companies/wantedly/post_articles/61666">新卒研修の締めくくりに社内
+ISUCON に挑戦しました。</a> - (2017/05/10)</li>
+<li><a
+href="https://speakerdeck.com/kawasy/sabisudukurifalsesubetewoxue-buxin-zu-yan-xiu-number-shi-di-deng-tan-2018">サービスづくりのすべてを学ぶ新卒研修
+#師弟登壇 2018</a></li>
+<li><a
+href="https://www.wantedly.com/companies/wantedly/post_articles/117958">今年も
+Wantedly の新卒研修で社内 ISUCON を行いました！</a> - (2018/05/02)</li>
+<li><a
+href="https://www.wantedly.com/companies/wantedly/post_articles/173824">2019
+年度 Wantedly 新卒研修の内容を公開します！</a> - (2019/06/19 )</li>
+</ul></li>
+<li>ウエディングパーク
+<ul>
+<li><a href="https://engineers.weddingpark.co.jp/?p=2593">新卒 2
+年目が作るエンジニア新卒研修（2019 年度）</a> - (2019/06/24)</li>
+</ul></li>
+<li>エーピーコミュニケーションズ
+<ul>
+<li><a
+href="https://www.slideshare.net/akira6592/mukiau2022p">新人研修資料
+向き合うエンジニア</a> - (2022/05/13)</li>
+</ul></li>
+<li>エヌ・ティ・ティ・コミュニケーションズ
+<ul>
+<li><a
+href="https://engineers.ntt.com/entry/2022/02/25/132351">新入社員ソフトウェア研修「レガシーコード改善ハンズオン」を実施しました！</a>
+- (2022/02/25)</li>
+<li><a
+href="https://engineers.ntt.com/entry/2022/03/09/113118">初心者向け Git
+/ GitHub 研修を開催しました</a> - (2022/03/09)</li>
+</ul></li>
+<li>エムスリー
+<ul>
+<li><a
+href="https://www.m3tech.blog/entry/2018/08/13/090000">エンジニア新人研修、始めました。</a>
+- (2018/08/13)</li>
+</ul></li>
+<li>オプト
+<ul>
+<li><a
+href="https://tech-magazine.opt.ne.jp/entry/2021/03/25/180000">2020
+年度のリモート新卒研修を振り返ってみた</a> - (2021/03/25)</li>
+<li><a
+href="https://tech-magazine.opt.ne.jp/entry/2021/12/03/182608">2021
+年度のリモート新卒研修を振り返ってみた</a> - (2021/12/03)</li>
+</ul></li>
+<li>カヤック
+<ul>
+<li><a href="https://github.com/kayac/newbie-training">2013
+年技術部新卒研修</a> - GitHub</li>
+<li><a href="http://tech.kayac.com/archive/2013training.html">2013
+年の新卒研修と社内 ISUCON やりました - (1) 研修編</a></li>
+<li><a href="http://tech.kayac.com/archive/2013isucon.html">2013
+年の新卒研修と社内 ISUCON やりました - (2) ISUCON 死闘編</a></li>
+<li><a href="http://tech.kayac.com/archive/newgrad2015_3.html">2015
+年新卒研修を行いました - 研修編 -</a> - (2015/05/16)</li>
+<li><a
+href="http://techblog.kayac.com/advent_calendar_2015_01.html">今年 4
+月からメンターになってやったこと</a> - (2015/12/01)</li>
+<li><a href="http://techblog.kayac.com/newgrad2017-lecture">2017 年度
+新卒技術部研修 〜講義編〜</a> - (2017/07/18)</li>
+<li><a href="http://techblog.kayac.com/newgrad2017-isucon-winner">2017
+年度 新卒技術部研修 〜社内 ISUCON 参加編〜</a> - (2017/07/20)</li>
+</ul></li>
+<li>クックパッド
+<ul>
+<li><a
+href="http://techlife.cookpad.com/entry/2015/05/22/182046">クックパッドの新卒研修
+2015</a></li>
+<li><a
+href="http://techlife.cookpad.com/entry/2016/06/14/120000">インフラ新卒研修と社内
+ISUCON のはなし</a> - (2016/06/14)</li>
+</ul></li>
+<li>クラスメソッド
+<ul>
+<li><a
+href="https://dev.classmethod.jp/articles/cx-div-new-graduate-ojt-2020/">初めての新卒研修に向けて
+CX 事業本部で準備したこと</a> - (2020/11/24)</li>
+<li><a
+href="https://dev.classmethod.jp/articles/training-design-tips/">研修設計の勘どころ</a>
+- (2022/07/07)</li>
+<li><a
+href="https://dev.classmethod.jp/articles/2022-new-graduate-training-readable-code/">2022
+年度新卒研修で「読みやすいコード」の研修を担当しました</a> -
+(2022/07/13)</li>
+<li><a
+href="https://dev.classmethod.jp/articles/2022-new-graduate-training-code-reading/">2022
+年度新卒研修で「コードリーディング」の研修を担当しました</a> -
+(2022/07/13)</li>
+</ul></li>
+<li>グリー
+<ul>
+<li><a href="http://labs.gree.jp/blog/2014/07/11000/">グリー新卒研修
+2014 ふりかえり</a></li>
+<li><a
+href="https://labs.gree.jp/blog/2020/07/20652/">新卒エンジニア向け研修を実施しました！2020
+版</a> - (2020/07/03)</li>
+</ul></li>
+<li>ぐるなび
+<ul>
+<li><a
+href="https://developers.gnavi.co.jp/entry/induction-course">社内エンジニアは本質的な価値にフォーカスする。ぐるなび新卒研修のコミュニケーション向上施策とは</a>
+- (2017/10/17)</li>
+</ul></li>
+<li>サイバーエージェント
+<ul>
+<li><a
+href="http://ameblo.jp/principia-ca/entry-12166556076.html">サイバーエージェント新卒エンジニア技術研修
+2016</a> - (2016/06/02)</li>
+<li><a
+href="https://developers.cyberagent.co.jp/blog/archives/7919/">アドテクスタジオの新卒エンジニア研修「ひとり
+DSP」</a> - (2017/06/22)</li>
+<li><a
+href="https://note.mu/masagotty/n/n8213fc7d9c33">『同期理解』をテーマにサイバーエージェントの新卒エンジニア研修を企画して感じたこと</a>
+- (2019/05/19 )</li>
+<li><a href="https://developers.cyberagent.co.jp/blog/archives/25542/">1
+ヶ月の新卒エンジニア研修をフルリモートで実施したら、想像以上にメリットが多かった【導入編】</a>
+- (2020/04/03)</li>
+<li><a
+href="https://speakerdeck.com/kurochan/ca20xin-zu-yan-xiu-dian-qi-tong-xin-shi-ye-zhe-bian">CA20
+新卒研修 電気通信事業者編</a> - (2020/05/08)</li>
+<li><a
+href="https://speakerdeck.com/kurochan/ca20xin-zu-yan-xiu-inhurabian">CA20
+新卒研修 インフラ編</a> - (2020/05/08)</li>
+<li><a
+href="https://speakerdeck.com/kurochan/ca20xin-zu-yan-xiu-sekiyuriteibian">CA20
+新卒研修 セキュリティ編</a> - (2020/05/08)</li>
+<li><a
+href="https://developers.cyberagent.co.jp/blog/archives/30024/">新卒エンジニア研修の講義資料を公開！技術力も圧倒的に成長するチーム開発研修とは</a>
+- (2021/06/04)</li>
+<li><a
+href="https://developers.cyberagent.co.jp/blog/archives/34628/">新卒データサイエンティスト研修「DSOps
+研修」とは何か?</a> - (2022/03/01)</li>
+<li><a
+href="https://developers.cyberagent.co.jp/blog/archives/36085/">実践 AWS
+ゼミのメンバーが中心となって新卒技術研修の環境を準備してみた</a> -
+(2022/08/16)</li>
+</ul></li>
+<li>サイボウズ
+<ul>
+<li><a
+href="https://blog.cybozu.io/entry/2019/02/22/163000">開発・運用本部向け新人研修
+2018 の講義資料を公開しました</a> - (2019/02/22)</li>
+<li><a href="https://blog.cybozu.io/entry/2019/09/05/080000">2019
+年のエンジニア新人研修の講義資料を公開しました</a> - (2019/09/05)</li>
+<li><a href="https://blog.cybozu.io/entry/2020/09/07/180000">2020
+年のエンジニア新人研修の講義資料を公開しました</a> - (2020/09/07)</li>
+<li><a href="https://blog.cybozu.io/entry/2021/07/20/100000">2021
+年のエンジニア新人研修の講義資料を公開しました</a> - (2021/07/20)</li>
+<li><a href="https://blog.cybozu.io/entry/2022/06/23/170000">2022
+年のエンジニア新人研修の講義資料を公開しました</a> - (2022/06/23)</li>
+</ul></li>
+<li>ディー・エヌ・エー
+<ul>
+<li><a
+href="http://www.slideshare.net/DaisukeTamada/perl-26371335">大規模 Perl
+初心者研修を支える技術</a> - (2013)</li>
+<li><a
+href="http://nakayamalog.blogspot.jp/2014/02/blog-post_17.html">新人エンジニア研修ですべきことできることを聞いてきた！</a>
+- (2014/02)</li>
+<li><a
+href="http://ryopeko.hatenablog.com/entry/2014/02/13/225714">Developers
+Summit 2014 で新卒エンジニア研修についてお話してきました</a></li>
+<li><a
+href="https://aws.amazon.com/jp/training/case-studies/dena-training/">AWS
+トレーニング活用事例 - 2020 新卒向け AWS
+トレーニングをオンラインで実施「気付き」を与えるカリキュラムで一体感を醸成</a>
+- (2020/09/14)</li>
+<li><a
+href="https://engineer.dena.com/posts/2021.07/21-new-graduates-training-operation/">新卒エンジニア研修で得られる一番の価値とは？</a>
+- (2021/07/21)</li>
+<li><a
+href="https://engineering.dena.com/blog/2022/05/design-of-fy22-eng-training/">『ようこそ不確実な世界へ』DeNA
+新卒エンジニア研修の設計方針</a> - (2022/05/11)</li>
+</ul></li>
+<li>ドリコム
+<ul>
+<li><a
+href="http://blog.father.gedow.net/2015/05/11/gedow-style-training-method/">新卒インフラエンジニアを育成した話</a>
+- (2015/05/11)</li>
+</ul></li>
+<li>ドワンゴ
+<ul>
+<li><a
+href="http://ch.nicovideo.jp/dwango-engineer/blomaga/ar246504">ドワンゴのエンジニア新人研修のご紹介</a>
+- (2013/06)</li>
+<li><a
+href="http://ch.nicovideo.jp/dwango-engineer/blomaga/ar567236">ドワンゴのエンジニア新人研修
+2014</a></li>
+<li><a
+href="http://ch.nicovideo.jp/dwango-engineer/blomaga/ar831445">ドワンゴのエンジニア新人研修
+2015</a></li>
+<li><a
+href="http://ch.nicovideo.jp/dwango-engineer/blomaga/ar1054007">ドワンゴのエンジニア新人研修
+2016</a> - (2016/06/22)</li>
+<li><a
+href="https://www.slideshare.net/kmizushima/scala-102763684">ドワンゴにおける新卒エンジニア向け
+Scala 研修について</a> - (2018/06/20)</li>
+<li><a
+href="https://dwango.github.io/articles/heart-technique-and-body-for-engineers/">エンジニアの心技体</a>
+- (2019/04/29)</li>
+<li><a href="https://dwango.github.io/articles/2021-onboarding/">2021
+年度 エンジニア新入社員研修のご紹介</a> - (2022/03/24)</li>
+<li><a href="https://blog.nnn.dev/entry/2022/06/13/110000">N
+予備校をエンジニア新卒研修にも活用する</a> - (2022/06/13)</li>
+</ul></li>
+<li>ニジボックス
+<ul>
+<li><a
+href="https://www.wantedly.com/companies/nijibox/post_articles/315625">フロントエンドグループ
+JavaScript / TypeScript 全体研修を実施</a> - (2021/03/29)</li>
+</ul></li>
+<li>日本経済新聞社
+<ul>
+<li><a
+href="https://speakerdeck.com/taishiblue/purodakutomanezimentotoha-xin-zu-yan-xiu">プロダクトマネジメントとは[新卒研修]</a>
+- (2018/05/11)</li>
+<li><a
+href="https://hack.nikkei.com/blog/training2022/">日本経済新聞社のデジタル人材向け新卒研修の紹介（2022
+年度）</a> - (2022/5/13)</li>
+</ul></li>
+<li>ヌーラボ
+<ul>
+<li><a
+href="https://nulab.com/ja/blog/nulab/how-to-be-helped-training/">ヌーラボ新卒研修の第一発目は「助けてもらい方」から始まった
+#ヌーラボ新卒研修</a> - (2022/04/22)</li>
+</ul></li>
+<li>はてな
+<ul>
+<li><a
+href="http://developer.hatenastaff.com/entry/2016/04/15/143000">2016
+年度はてな新人エンジニア研修を行いました</a> - (2016/04/15)</li>
+<li><a
+href="http://developer.hatenastaff.com/entry/2016-newbie-training-of-web-operation">2016
+年ウェブオペレーションエンジニアの新卒研修</a> - (2016/07/25)</li>
+<li><a
+href="https://developer.hatenastaff.com/entry/trouble-training">エンジニア新人研修で障害対応演習を行いました</a>
+- (2017/12/23)</li>
+<li><a
+href="https://developer.hatenastaff.com/entry/2021/03/12/103000">エンジニア新人研修の一環で株式会社はてな
+社内 ISUCON を開催しました</a> - (2021/03/12)</li>
+</ul></li>
+<li>ハンズラボ
+<ul>
+<li><a
+href="https://www.hands-lab.com/tech/entry/2514.html">ハンズラボ新卒研修
+2017 (1/2) 〜カリキュラム編〜</a> - (2017/8/3)</li>
+<li><a
+href="https://www.hands-lab.com/tech/entry/2829.html">ハンズラボ新卒研修
+2017 (2/2) 〜実際にやってみた編〜</a> - (2017/9/29)</li>
+</ul></li>
+<li>ピクシブ
+<ul>
+<li><a
+href="https://inside.pixiv.blog/myonsawa/1966">新卒の研修は新卒がつくる！？プログラミング研修のつくりかた</a>
+- (2017/07/20)</li>
+<li><a
+href="https://inside.pixiv.blog/2022/01/13/150000">新卒のセキュアコーディング研修に
+KENRO を採用した事例が公開されました</a> - (2022/01/13)</li>
+<li><a
+href="https://inside.pixiv.blog/2022/06/28/153000">新卒研修で「ソフトウェアテスト研修」を実施しました！</a>
+- (2022/06/28)</li>
+</ul></li>
+<li>ビジョナル
+<ul>
+<li><a
+href="https://engineering.visional.inc/blog/226/visional-newgrads-engineer-training/">技術力だけではない、Visional
+の新卒研修フレームワーク</a> - (2021/03/23)</li>
+<li><a
+href="https://engineering.visional.inc/blog/373/visional-newgrads-engineer-scrum-training/">Visional
+の新卒向けスクラム研修の内容を題材を含めて公開します！</a> -
+(2021/12/16)</li>
+</ul></li>
+<li>ファクトリアル
+<ul>
+<li><a
+href="http://bosssato.hatenablog.com/entry/2014/06/18/090321">新卒エンジニア研修の取り組みやカリキュラム</a>
+- (2014/06)</li>
+</ul></li>
+<li>フィードフォース
+<ul>
+<li><a href="http://tech.feedforce.jp/2016-rookie-training.html">2016
+年度の新卒エンジニア受け入れを終えて</a> - (2016/06/16)</li>
+<li><a
+href="http://tech.feedforce.jp/memory-of-2016-rookie-engineer-training.html">フィードフォースの
+2016 年度エンジニア新人研修についてまとめてみた</a> - (2016/07/12)</li>
+<li><a
+href="https://developer.feedforce.jp/entry/2018/10/18/140000">弊社の新人エンジニア研修カリキュラムを惜しみなく公開してみる</a>
+- (2018/10/18)</li>
+</ul></li>
+<li>ブレインパッド
+<ul>
+<li><a
+href="https://speakerdeck.com/brainpadpr/basics-of-analysis-modeling">分析の基礎（モデリング）/
+Basics of analysis ~modeling~</a> - (2019/09/06)</li>
+<li><a
+href="https://speakerdeck.com/brainpadpr/sql-for-data-handling">データハンドリングのための
+SQL / SQL for data handling</a> - (2019/11/22)</li>
+<li><a
+href="https://marupippi.hatenablog.jp/entry/make_training_exciting">自社の新卒研修でコンペみたいな演習があったのでエキサイティングにした</a>
+- (2019/11/22)</li>
+<li><a href="https://speakerdeck.com/brainpadpr/git-hands-on">Git
+ハンズオン研修 / Git Hands-on</a> - (2020/07/14)</li>
+</ul></li>
+<li>ミクシィ
+<ul>
+<li><a
+href="https://speakerdeck.com/orgachem/she-ji-yan-xiu">株式会社ミクシィ新卒研修
+- テスト/設計研修</a> - (2017)</li>
+<li><a
+href="https://speakerdeck.com/orgachem/xian-chang-gajiao-eru-bi-yao-naji-shu-woxue-beruji-shu-yan-xiu-zhu-shi-hui-she-mikusii">「現場が教える、必要な技術を学べる技術研修」-
+株式会社ミクシィ</a> - (2018/01/21)</li>
+<li><a
+href="https://mixil.mixi.co.jp/company/2204">新卒エンジニア研修をのぞいてみた。前編</a>
+- (2018/04/24)</li>
+<li><a
+href="https://mixil.mixi.co.jp/company/2248">新卒エンジニア研修をのぞいてみた。　後編</a>
+- (2018/04/26)</li>
+<li><a
+href="https://speakerdeck.com/rockname/2020-design-test-mixi-training">2020
+年度 ミクシィ新卒研修 -設計・テスト- / 2020 design test mixi
+training</a> - (2020/04/15)</li>
+<li><a
+href="https://medium.com/mixi-developers/21-technical-training-a0bcdbf9bca0">ミクシィの
+21 新卒技術研修の資料と動画を公開します！</a> - (2021/04/28)</li>
+<li><a
+href="https://medium.com/mixi-developers/2021-ios-mixi-training-d981b62e680f">ミクシィの
+iOS 新卒研修資料を公開しました</a> - (2021/05/11)</li>
+<li><a
+href="https://mixi-developers.mixi.co.jp/22-technical-training-5fc362a9dc41">今年もミクシィの
+22 新卒技術研修の資料と動画を公開します！</a> - (2022/07/05)</li>
+</ul></li>
+<li>メドレー
+<ul>
+<li><a href="https://developer.medley.jp/entry/2019/12/16/165947">2019
+年度新卒エンジニア研修について</a> - (2019/12/16)</li>
+<li><a href="https://developer.medley.jp/entry/2020/09/25/174527">2020
+年度新卒エンジニア研修について</a> - (2020/09/25)</li>
+<li><a href="https://developer.medley.jp/entry/2021/10/12/180147">2021
+年度新卒エンジニア研修について</a> - (2021/10/12)</li>
+<li><a href="https://developer.medley.jp/entry/2022/07/22/214813">21
+年新卒入社エンジニアと座談会で振り返る新卒研修</a> - (2022/07/22)</li>
+<li><a href="https://developer.medley.jp/entry/2022/08/31/223542">22
+年度新卒研修に取り入れた QA 講座について QA
+エンジニアに語ってもらいました</a> - (2022/08/31)</li>
+</ul></li>
+<li>メルカリ
+<ul>
+<li><a
+href="https://tech.mercari.com/entry/2019/05/30/113458">新卒エンジニア向け技術基礎研修「Fundamental
+Training」を実施しました！</a> - (2019/05/30)</li>
+<li><a
+href="https://speakerdeck.com/afroscript/yan-xiu-falsexiao-guo-ce-ding-tuteminasandousitemasu-merukarixin-zu-yan-xiu-false-xiao-guo-ce-ding-nimogaiteiruhua">~研修の効果測定ってみなさんどうしてます？~
+メルカリ新卒研修の 効果測定にもがいている話 - Speaker Deck</a> -
+(2019/12/16)</li>
+<li><a href="https://mercan.mercari.com/articles/19550/">2
+ヶ月かけて新卒エンジニアのスキル向上を目指す、メルカリ技術研修「DevDojo」のすべて</a>
+- (2020/01/14)</li>
+<li><a
+href="https://engineering.mercari.com/blog/entry/20220518-ec01a32c9f/">メルカリの新卒エンジニアは入社後どう過ごす？2022
+年 4 月新卒が経験した技術研修のすべて</a> - (2022/05/18)</li>
+<li><a
+href="https://engineering.mercari.com/blog/entry/20221223-showcasing-devdojo-a-series-of-mercari-developed-learning-content-for-engineering/">メルカリの社内技術研修
+”DevDojo”の研修資料を公開します！</a> - (2022/12/23)</li>
+</ul></li>
+<li>ヤフー
+<ul>
+<li><a
+href="https://techblog.yahoo.co.jp/entry/2020091430016616/">オンラインでの新卒研修の作り方〜アジャイル研修について</a>
+- (2020/09/14)</li>
+<li><a
+href="https://techblog.yahoo.co.jp/entry/2021092230186531/">ヤフー式新人研修
+〜 フルオンラインでエンジニア研修を作った話</a> - (2021/09/22)</li>
+</ul></li>
+<li>ラクス
+<ul>
+<li><a
+href="https://tech-blog.rakus.co.jp/entry/20220701/training">【2022
+年】新卒エンジニアの技術研修発表会を行いました！</a> - (2022/07/01)</li>
+</ul></li>
+<li>リクルート
+<ul>
+<li><a
+href="https://recruit-tech.co.jp/blog/2017/06/07/bootcamp2017/">リクルートテクノロジーズ　新人研修特別編を公開します</a>
+- (2017/06/07)</li>
+<li><a
+href="https://recruit-tech.co.jp/blog/2018/05/29/data_bootcamp2018/">リクルートテクノロジーズ　新人研修特別版（データ分析編）</a>
+- (2018/05/29)</li>
+<li><a
+href="https://recruit-tech.co.jp/blog/2018/07/23/rtech_bootcamp_2018/">リクルートテクノロジーズ　エンジニアコース新人研修の内容を公開します（2018
+年度版）</a> - (2018/07/23)</li>
+<li><a
+href="https://recruit-tech.co.jp/blog/2019/07/02/rtech_bootcamp_2019/">リクルートテクノロジーズ　エンジニアコース新人研修の内容を公開します！（2019
+年度版）</a> - (2019/07/02)</li>
+<li><a
+href="https://recruit-tech.co.jp/blog/2020/08/21/rtech_bootcamp_2020/">リクルートテクノロジーズ　エンジニアコース新人研修の内容を公開します！（2020
+年度版）</a> - (2020/08/21)</li>
+<li><a
+href="https://recruit-tech.co.jp/blog/2021/08/20/recruit-bootcamp-2021/">株式会社リクルート　エンジニアコース新人研修の内容を公開します！（2021
+年度版）</a> - (2021/08/20)</li>
+<li><a
+href="https://blog.recruit.co.jp/rtc/2022/09/09/recruit-bootcamp-2022/">株式会社リクルート　エンジニアコース新人研修の内容を公開します！（2022
+年度版）</a> - (2022/09/09)</li>
+</ul></li>
+<li>リブセンス
+<ul>
+<li><a
+href="https://qiita.com/tchikuba/items/3b3fb14da696564e90ca">プロダクトエンジニア養成講座@リブセンスの
+web アプリケーションコース用研修資料を公開します</a> - (2019/10/25)</li>
+</ul></li>
+</ul>
+<h3 id="エンジニア向け研修受講者">エンジニア向け研修受講者</h3>
+<ul>
+<li>ALBERT
+<ul>
+<li><a
+href="https://blog.albert2005.co.jp/2018/07/02/%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b5%e3%82%a4%e3%82%a8%e3%83%b3%e3%83%86%e3%82%a3%e3%82%b9%e3%83%88%e6%96%b0%e5%8d%92%e7%a0%94%e4%bf%ae%e3%83%ac%e3%83%9d%e3%83%bc%e3%83%88/">データサイエンティスト新卒研修レポート</a>
+- (2018/07/02)</li>
+<li><a
+href="https://blog.albert2005.co.jp/2019/07/11/2019_newgraduate/">【2019
+年新卒入社】株式会社 ALBERT に入社しました</a> - (2019/07/11)</li>
+<li><a
+href="https://blog.albert2005.co.jp/2020/06/24/2020-newgraduate/">[2020
+新卒入社]株式会社 ALBERT に入社しました</a> - (2020/06/24)</li>
+</ul></li>
+<li>ARISE analytics
+<ul>
+<li><a
+href="https://note.ariseanalytics.com/n/nb596a5f01d9b">優秀なデータサイエンティストが育つ！ARISE
+analytics 独自の新卒研修とは…？</a> - (2021/09/02)</li>
+</ul></li>
+<li>CARTA HOLDINGS（旧 VOYAGE GROUP）
+<ul>
+<li><a href="http://suzuken.hatenablog.jp/entry/2014/12/18/221610">年報
+#vgadvent2014 - VOYAGE GROUP 新卒 3 年目の人のブログ</a> -
+(2014/12)</li>
+</ul></li>
+<li>Classi
+<ul>
+<li><a href="https://tech.classi.jp/entry/2021/06/14/113000">2021
+年度新卒研修の一環としてそーだい塾に参加しました</a> - (2021/06/14)</li>
+<li><a href="https://tech.classi.jp/entry/2022/07/01/120000">Classi
+初の新卒データサイエンティストが研修を終えて</a> - (2022/07/01)</li>
+</ul></li>
+<li>freee
+<ul>
+<li><a
+href="https://speakerdeck.com/freee/shi-di-deng-tan-2018-di-zi-shi-dian-freeezhu-shi-hui-she">師弟登壇
+2018 弟子視点 freee 株式会社</a>- (2018/1/21)</li>
+</ul></li>
+<li>GMO アドパートナーズ
+<ul>
+<li><a
+href="http://techblog.gmo-ap.jp/2016/05/23/1%E3%83%B6%E6%9C%88%E9%96%93%E3%81%AE%E6%96%B0%E5%8D%92%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%A0%94%E4%BF%AE%E3%81%A7%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8/">1
+ヶ月間の新卒エンジニア研修で学んだこと</a> - (2016/5/23)</li>
+<li><a
+href="https://techblog.gmo-ap.jp/2020/09/23/new_employee_training_2020/">GMO
+新卒エンジニア研修を通じて</a> - (2020/09/23)</li>
+</ul></li>
+<li>GMO アドマーケティング
+<ul>
+<li><a
+href="https://techblog.gmo-ap.jp/2018/10/19/%E3%80%902018%E5%B9%B4%E5%BA%A6%E6%96%B0%E5%8D%92%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%A0%94%E4%BF%AE%E3%80%91%E6%96%B0%E5%8D%92%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%A0%94/">【2018
+年度新卒エンジニア研修】新卒エンジニア研修で手を動かしつつ学んだこと</a>
+- (2018/10/19)</li>
+<li><a
+href="https://techblog.gmo-ap.jp/2018/10/22/%E3%80%902018%E5%B9%B4%E5%BA%A6%E6%96%B0%E5%8D%92%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%A0%94%E4%BF%AE%E3%80%91%E6%9C%AA%E7%B5%8C%E9%A8%93%E3%81%A7%E5%85%A5%E7%A4%BE%E3%81%97%E3%81%9F/">【2018
+年度新卒エンジニア研修】未経験で入社した新卒の話</a> - (2018/10/22)</li>
+<li><a
+href="https://techblog.gmo-ap.jp/2018/10/23/%E3%80%902018%E5%B9%B4%E5%BA%A6%E6%96%B0%E5%8D%92%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%A0%94%E4%BF%AE%E3%80%91-%E6%96%B0%E5%8D%92%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%A0%94/">2018
+年度新卒エンジニア研修】 新卒エンジニア研修で身についた基礎</a> -
+(2018/10/23)</li>
+<li><a
+href="https://techblog.gmo-ap.jp/2021/10/18/after_new_graduate_training/">GMO
+アドマーケティング 2021 年度新卒研修について</a> - (2021/10/18)</li>
+</ul></li>
+<li>GMO ペパボ
+<ul>
+<li><a
+href="http://blog.hifumi.info/2013/12/31/rails-tutorial/">ペパボ新卒エンジニア研修
+前編</a> - (2013/12)</li>
+<li><a
+href="http://blog.hifumi.info/2014/01/04/web-operation/">ペパボ新卒エンジニア研修
+後編</a> - (2014/01)</li>
+<li><a
+href="http://yutokyokutyo.hatenablog.com/entry/2014/12/06/003536">ペパボエンジニア研修
+~前半戦~</a> - (2014/12)</li>
+<li><a
+href="https://tech.pepabo.com/2017/07/13/pepabo-college_2nd/">第二新卒向け研修「ペパボカレッジ(Android
+編)」を受けました。</a> - (2017/07/13)</li>
+<li><a
+href="https://tech.pepabo.com/2017/08/08/engineer-training-2017-vol1/">ペパボの新卒エンジニア研修
+2017 Vol.1 - ペパボテックブログ</a> - (2017/08/08)</li>
+<li><a
+href="https://tech.pepabo.com/2017/11/08/engineer-training-2017-vol2/">ペパボの新卒エンジニア研修
+2017 Vol.2 - ペパボテックブログ</a> - (2017/11/08)</li>
+<li><a
+href="https://tech.pepabo.com/2017/12/22/new-graduates-engineers-impression/">エンジニア新卒研修を受けました</a>
+- (2017/12/22)</li>
+<li><a
+href="https://hirokazaitsu.com/posts/2018-05-20-carrer-keynote/">新卒研修でキャリアキーノートに挑戦しました</a>
+- (2018/5/20)</li>
+<li><a
+href="https://tech.pepabo.com/2018/11/21/8th-engineer-training/">2018
+年度新卒エンジニア研修を受けました！ - ペパボテックブログ</a> -
+(2018/11/21)</li>
+<li><a
+href="http://tsumichan.hatenablog.com/entry/2019/02/15/010713">2018
+年度新卒エンジニア研修が終わった</a> - (2019/02/15)</li>
+<li><a
+href="https://memo.yammer.jp/posts/pepabo-11th-training">リモートワークの馴染む、4
+月の新卒研修 (GMO ペパボ)</a> - (2021/05/11)</li>
+<li><a
+href="https://tech.pepabo.com/2022/07/14/12th-training-frontend/">新卒研修で最高の
+Web サービスを作りました</a> - (2022/07/14)</li>
+</ul></li>
+<li>Gunosy
+<ul>
+<li><a
+href="https://data.gunosy.io/entry/what-new-grads-enginners-do">データ分析部に配属された新卒エンジニアは何をするの？その紹介</a>
+- (2019/05/14)</li>
+<li><a href="https://data.gunosy.io/entry/2021/08/05/164825">Gunosy Tech
+Lab 新卒エンジニアブログ vol1 入社からの 4 ヶ月を振り返って</a> -
+(2021/08/05)</li>
+<li><a
+href="https://data.gunosy.io/entry/bi_marketing">データ分析配属のはずが、マーケティングチームに配属された話
+[新卒エンジニアブログ vol.2]</a> - (2021/08/18)</li>
+<li><a
+href="https://tech.gunosy.io/entry/ad-onboarding">新卒が臨む、広告配信の裏側
+[新卒エンジニアブログ vol.3]</a> - (2021/10/13)</li>
+<li><a
+href="https://data.gunosy.io/entry/onboarding_mediaml2022">【新卒ブログ】エンジニア
+1 年目が体験した新卒研修と OJT</a> - (2022/09/15)</li>
+</ul></li>
+<li>LIFULL
+<ul>
+<li><a href="https://www.lifull.blog/entry/2020/08/07/115000">LIFULL
+の新卒エンジニア研修 in 2020</a> - (2020/08/07)</li>
+<li><a
+href="https://www.lifull.blog/entry/2022/01/28/120000">新卒エンジニアの
+2 年目研修【SET】を受講して</a> - (2022/01/28)</li>
+</ul></li>
+<li>Money Forward
+<ul>
+<li><a
+href="https://moneyforward.com/engineers_blog/2018/07/03/induction-training-2018/">マネーフォワードの
+2018 新卒研修を振り返ってみた</a> - (2018/07/03)</li>
+</ul></li>
+<li>Speee
+<ul>
+<li><a href="https://tech.speee.jp/entry/2016/07/15/193421">Speee
+の新卒エンジニア研修について</a> - (2016/07/15)</li>
+</ul></li>
+<li>ZOZO テクノロジーズ（旧スタートトゥデイテクノロジーズ）
+<ul>
+<li><a
+href="https://techblog.zozo.com/entry/customer_support_training_2018">新卒エンジニアがカスタマーサポートを一度は経験しておくべき
+6 つの理由</a> - (2018/05/30)</li>
+</ul></li>
+<li>ウィルゲート
+<ul>
+<li><a href="http://tech.willgate.co.jp/entry/2018/05/28/143910">web
+開発経験ゼロの新卒が新人研修に参加しました！</a> - (2018/05/28)</li>
+<li><a
+href="http://tech.willgate.co.jp/entry/2018/05/31/100634">新卒研修振り返り</a>
+- (2018/05/31)</li>
+<li><a href="https://tech.willgate.co.jp/entry/2019/06/04/115000">2019
+年度新卒エンジニア研修を行いました</a> - (2019/06/04)</li>
+</ul></li>
+<li>ウォンテッドリー
+<ul>
+<li><a
+href="https://www.wantedly.com/companies/wantedly/post_articles/117958">今年も
+Wantedly の新卒研修で社内 ISUCON を行いました！</a> - (2018/05/02)</li>
+<li><a
+href="https://kysyogun.hatenablog.com/entry/2019/05/11/115247">大切なことは全て新卒
+ISUCON が教えてくれた - ykamez の技術ブログ</a> - (2019/05/11)</li>
+</ul></li>
+<li>オプト
+<ul>
+<li><a
+href="https://tech-magazine.opt.ne.jp/entry/2019/08/19/073000">エンジニア新卒向け技術研修
+2019 を行いました</a> - (2019/08/19)</li>
+<li><a href="https://tech-magazine.opt.ne.jp/entry/2020/12/01/184550">20
+年度のリモート新卒研修を振り返ってみた</a> - (2020/12/01)</li>
+<li><a
+href="https://tech-magazine.opt.ne.jp/entry/2021/09/08/160524">新卒研修
+2021 を新卒の視点から振り返ってみた。</a> - (2021/09/08)</li>
+</ul></li>
+<li>エムスリー
+<ul>
+<li><a
+href="https://www.m3tech.blog/entry/2021/07/26/113000">新卒エンジニア全員が
+AWS 研修に参加してきました</a> - (2021/07/26)</li>
+</ul></li>
+<li>カヤック
+<ul>
+<li><a
+href="https://techblog.kayac.com/newgrad_2020">新卒研修の５日間で雑談専用のビデオチャットツールを作った話</a>
+- (2020/12/15)</li>
+<li><a href="https://techblog.kayac.com/newgrad2021-ctf">2021
+年の技術部新卒研修で社内 CTF の運営・作問をしました</a> -
+(2021/05/10)</li>
+</ul></li>
+<li>クックパッド
+<ul>
+<li><a
+href="https://speakerdeck.com/iguchi1124/shi-di-deng-tan-2018-kutukupatudodedi-zi-ru-risitahua">師弟登壇
+2018 クックパッドで弟子入りした話</a> - (2018/01/21)</li>
+</ul></li>
+<li>クラウドワークス
+<ul>
+<li><a
+href="https://engineer.crowdworks.jp/entry/2019/06/28/121503">新卒エンジニアによる配属後２ヶ月の振り返りと、成長するために必要そうなこと。</a>
+- (2019/06/28)</li>
+</ul></li>
+<li>クラスメソッド
+<ul>
+<li><a
+href="https://dev.classmethod.jp/articles/cx-training-of-learn-creating-product-new-graduate-2020/">チームでプロダクトを作るということ。
+– 1 ヶ月間の CX 事業本部での研修が終わったので個人的に振り返りをしていく
+–</a> - (2020/11/24)</li>
+<li><a
+href="https://dev.classmethod.jp/articles/eetann-3m-for-newgrad2022-training/">クラスメソッドの新卒研修
+3 ヶ月を振り返る(22 卒エンジニア)</a> - (2022/07/04)</li>
+</ul></li>
+<li>ぐるなび
+<ul>
+<li><a
+href="https://developers.gnavi.co.jp/entry/training_from_new">新卒から見たぐるなびのエンジニア研修〜1
+年間をふりかえって</a> - (2017/10/05)</li>
+</ul></li>
+<li>サイバーエージェント
+<ul>
+<li><a
+href="https://developers.cyberagent.co.jp/blog/archives/29957/">AI
+事業本部の新卒研修で爆速の広告システム（DSP）を作った</a> -
+(2021/06/02)</li>
+</ul></li>
+<li>シーエー・アドバンス
+<ul>
+<li><a
+href="https://qiita.com/ken_2/items/04ed1ff401d52be09510">新卒エンジニアが新規開発で得た学び</a>
+- (2020/12/15)</li>
+</ul></li>
+<li>スマートキャンプ
+<ul>
+<li><a
+href="https://tech.smartcamp.co.jp/entry/new-graduate-learning-vue">20
+卒未経験エンジニアが研修で Vue.js に自信を持った話</a> -
+(2020/05/28)</li>
+</ul></li>
+<li>ディー・エヌ・エー
+<ul>
+<li><a
+href="https://engineering.dena.com/blog/2020/07/20-new-graduates-training-retrospective/">20
+新卒エンジニアの研修振り返りレポートが始まります 🙌</a> -
+(2020/07/30)</li>
+<li><a
+href="https://engineering.dena.com/blog/2021/07/21-new-graduates-training-team-development/">新卒エンジニアが取り組んだチーム開発【研修振り返りレポート】</a>
+- (2021/07/21)</li>
+<li><a
+href="https://engineer.dena.com/posts/2021.10/sdi-2021/">新卒エンジニアが取り組んだシステムデザインインタビュー【研修振り返りレポート】</a>
+- (2021/10/14)</li>
+<li><a
+href="https://engineering.dena.com/blog/2022/08/fy22-new-graduates-training-higashi/">研修期間中に再認識した「学ぶことの楽しさ」【研修振り返りレポート】</a>
+- (2022/08/02)</li>
+</ul></li>
+<li>パーソルキャリア
+<ul>
+<li><a
+href="https://techtekt.persol-career.co.jp/entry/tech/220913_01">22
+新卒だけで新規サービスの企画から開発までやってみた話――2022 新卒研修
+技術編</a> - (2022/09/13)</li>
+</ul></li>
+<li>はてな
+<ul>
+<li><a
+href="https://github.com/hatena/Hatena-Textbook">はてなの教科書</a></li>
+<li><a
+href="https://developer.hatenastaff.com/entry/2019/04/24/150128">2019
+年新卒 サービス開発研修レポート</a> - (2019/04/24)</li>
+</ul></li>
+<li>ハンズラボ
+<ul>
+<li><a
+href="https://www.hands-lab.com/tech/entry/3061.html">ハンズラボ新卒研修
+2017〜仮想プロジェクト完了報告〜</a> - (2017/10/25)</li>
+</ul></li>
+<li>ビジョナル
+<ul>
+<li><a
+href="https://engineering.visional.inc/blog/320/newgrads-engineer-training-look-back/">Visional
+での「ものづくり」を実体験する新卒研修</a> - (2021/10/06)</li>
+</ul></li>
+<li>ブレインパッド
+<ul>
+<li><a
+href="https://note.mu/mss_kid/n/n8b221359ae14">新卒研修、振り返ってみます</a>
+- (2019/08/08)</li>
+</ul></li>
+<li>モバイルファクトリー
+<ul>
+<li><a
+href="https://corpcomn.mobilefactory.jp/archives/1921/">新人研修_シェア研修：デザイン思考ワークショップ</a>
+- (2019/05/15)</li>
+</ul></li>
+<li>セプテーニ
+<ul>
+<li><a
+href="http://labs.septeni.co.jp/entry/2017/09/29/182435">新卒研修を受けて</a>
+- (2017/09/29)</li>
+<li><a
+href="http://labs.septeni.co.jp/entry/2017/10/02/170535">新人研修を終えた新人が研修について書きました</a>
+- (2017/10/02)</li>
+<li><a href="http://labs.septeni.co.jp/entry/2017/10/03/093927">E
+コマースサイトを作るチーム研修を受けました</a> - (2017/10/03)</li>
+<li><a href="http://labs.septeni.co.jp/entry/2018/07/17/182459">2018
+年新卒研修】Scala を通して見えたこと</a> - (2018/07/17)</li>
+<li><a href="http://labs.septeni.co.jp/entry/2018/07/17/191021">3.5
+ヶ月の新卒研修を終えて</a> - (2018/07/17)</li>
+</ul></li>
+<li>ドワンゴ
+<ul>
+<li><a href="https://blog.nnn.dev/entry/2022/11/09/110000">研修で初めて
+Ruby on Rails を触って学んだこと</a> - (2022/11/09)</li>
+</ul></li>
+<li>マイクロアド
+<ul>
+<li><a
+href="https://developers.microad.co.jp/entry/2018/08/22/193641">マイクロアドの新卒
+4 人が研修で社内システムを開発した話</a> - (2018/08/22)</li>
+<li><a
+href="https://developers.microad.co.jp/entry/2019/10/21/060000">19
+年度新卒チームが研修で MVP 投票システムを作った話</a> -
+(2019/10/21)</li>
+<li><a
+href="https://developers.microad.co.jp/entry/2020/08/31/115000">2020
+年度新卒チームで Redis の管理システムを作った話</a> - (2020/08/31)</li>
+<li><a
+href="https://developers.microad.co.jp/entry/2021/09/06/063000">2021
+年新卒チームでコーディング試験の管理システムを作った話</a> -
+(2021/09/06)</li>
+</ul></li>
+<li>ミクシィ
+<ul>
+<li><a
+href="http://alpha.mixi.co.jp/entry/2017/07/04/105755">新卒研修受講レポート～セキュリティ編～</a>
+- (2017/07/04)</li>
+<li><a
+href="http://alpha.mixi.co.jp/entry/2017/07/07/173650">新卒研修受講レポート～テスト編～</a>
+- (2017/07/07)</li>
+<li><a
+href="http://alpha.mixi.co.jp/entry/2017/08/10/201045">新卒研修の受講レポート～データベース編～</a>
+- (2017/08/10)</li>
+</ul></li>
+<li>ゆめみ
+<ul>
+<li><a href="https://github.com/yumemi-inc/ios-training">iOS
+研修(GitHub)</a></li>
+<li><a
+href="https://qiita.com/watanave/items/1cefa5aae18f5141c426">ゆめみの
+iOS エンジニア研修を公開します！(Qiita)</a></li>
+</ul></li>
+<li>ラクス
+<ul>
+<li><a href="https://tech-blog.rakus.co.jp/entry/20220106/kenshu">【2021
+年】ラクスの新卒エンジニアが新卒研修を振り返ってみた</a> -
+(2022/01/06)</li>
+</ul></li>
+</ul>
+<h3 id="エンジニア以外向け研修">エンジニア以外向け研修</h3>
+<ul>
+<li>グッドパッチ
+<ul>
+<li><a href="https://goodpatch.com/blog/ux-training-newgrads">UX
+デザイナーのマインドセットを学ぶ Goodpatch 流の新卒 UX デザイン研修</a>
+- (2021/06/01)</li>
+<li><a
+href="https://goodpatch-tech.hatenablog.com/entry/dev_training_2022_01">若手エンジニア二人で新卒の全職種向けエンジニアリング研修をリデザインした話
+設計編</a> - (2022/05/18)</li>
+<li><a
+href="https://goodpatch-tech.hatenablog.com/entry/dev_training_2022_02">若手エンジニア二人で新卒の全職種向けエンジニアリング研修をリデザインした話
+実施編</a> - (2022/05/18)</li>
+</ul></li>
+<li>サイバード
+<ul>
+<li><a
+href="https://www.cybird.co.jp/recruit/engineer/blog/advent-calendar2017cybird1219/">非エンジニア職の新卒に研修で技術とは何かを伝えるにはどうしたらいいか</a>
+- (2017/12/19)</li>
+</ul></li>
+<li>スマートキャンプ
+<ul>
+<li><a
+href="https://tech.smartcamp.co.jp/entry/2019/06/14/181406">【試される大地】北海道でビジネス職の新卒向けにエンジニア研修をした話</a>
+- (2019/06/14)</li>
+</ul></li>
+<li>ドワンゴ
+<ul>
+<li><a href="http://creator.dwango.co.jp/10989.html">2016
+年度新卒デザイナー GitHub 研修の紹介</a> - (2017/04/13)</li>
+</ul></li>
+<li>ピクシブ
+<ul>
+<li><a
+href="http://inside.pixiv.net/entry/2014/04/28/140859">非エンジニアの新卒にプログラミング研修を行いました</a>
+- (2014/04)</li>
+<li><a
+href="https://inside.pixiv.blog/kamonabe/7272">ピクシブ初！新卒ビジネス職全員に部署全体で
+OJT をしました。</a> - (2019/06/26)</li>
+</ul></li>
+<li>ビジョナル（ビズリーチ）
+<ul>
+<li><a
+href="https://design.visional.inc/archives/4471">新卒デザイナーのフロントエンド研修設計に込めた思い</a>
+- (2019/07/08)</li>
+</ul></li>
+<li>ヤフー
+<ul>
+<li><a
+href="https://linotice.tumblr.com/post/179580378759/20181030">先輩社員が育成カリキュラムをプランニング
+── 現場での実践力を高めるヤフー新卒デザイナー研修の舞台裏</a> -
+(2018/10/30)</li>
+</ul></li>
+</ul>
+<h3 id="教育研究機関">教育/研究機関</h3>
+<ul>
+<li>京都大学
+<ul>
+<li><a
+href="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/265459">プログラミング演習
+Python 2021</a></li>
+</ul></li>
+<li>数理・データサイエンス教育強化拠点コンソーシアム
+<ul>
+<li><a
+href="http://www.mi.u-tokyo.ac.jp/consortium/e-learning.html">リテラシーレベルモデルカリキュラム対応教材</a></li>
+</ul></li>
+<li>筑波大学
+<ul>
+<li><a
+href="https://mitani.cs.tsukuba.ac.jp/book_support/python/">「Python
+ゼロからはじめるプログラミング」サポートページ</a></li>
+<li><a href="https://mitani.cs.tsukuba.ac.jp/book_support/java/">Java
+プログラミング解説書 サポートページ</a></li>
+</ul></li>
+<li>東京大学
+<ul>
+<li><a
+href="http://www.mi.u-tokyo.ac.jp/">数理・情報教育研究センター</a></li>
+<li>数理・情報教育研究センター <a
+href="https://utokyo-ipp.github.io/">Python プログラミング入門</a></li>
+<li>東京大学計数工学科 “システム情報工学特論” <a
+href="https://tomomano.github.io/learn-aws-by-coding/">コードで学ぶ AWS
+入門</a></li>
+<li>松尾研究室 <a href="https://weblab.t.u-tokyo.ac.jp/dl4us/">DL4US
+コンテンツ 公開ページ</a></li>
+<li>松尾研究室 <a
+href="https://weblab.t.u-tokyo.ac.jp/%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD%E3%83%BB%E6%B7%B1%E5%B1%A4%E5%AD%A6%E7%BF%92%E3%82%92%E5%AD%A6%E3%81%B6%E3%81%9F%E3%82%81%E3%81%AE%E3%83%AD%E3%83%BC%E3%83%89%E3%83%9E%E3%83%83%E3%83%97/">人工知能・深層学習を学ぶためのロードマップ</a></li>
+</ul></li>
+<li>ニューヨーク大学
+<ul>
+<li>データ・サイエンス・センター <a
+href="https://atcold.github.io/pytorch-Deep-Learning/ja/">DEEP
+LEARNING</a></li>
+</ul></li>
+<li>ハーバード大学
+<ul>
+<li><a href="https://cs50.jp/">CS50.jp</a></li>
+</ul></li>
+</ul>
+<h3 id="その他技術資料">その他技術資料</h3>
+<ul>
+<li>Amazon
+<ul>
+<li><a
+href="https://aws.amazon.com/jp/training/learning-paths/machine-learning/">機械学習</a></li>
+</ul></li>
+<li>CircleCI
+<ul>
+<li><a
+href="https://circleci.com/ja/blog/why-we-re-designed-our-engineering-career-paths-at-circleci/">CircleCI
+がエンジニアのキャリア パスを見直した理由とは</a> - (2018/12/11)</li>
+<li><a
+href="https://circleci.com/ja/blog/7-steps-to-building-an-engineering-competency-matrix/">エンジニアリング
+コンピテンシー マトリックスを作成するための 7 つの手順</a> -
+(2019/02/28)</li>
+<li><a
+href="https://docs.google.com/spreadsheets/d/131XZCEb8LoXqy79WWrhCX4sBnGhCM1nAIz4feFZJsEo/edit?usp=sharing">CircleCI
+Engineering Competency Matrix [public version]</a></li>
+</ul></li>
+<li>Japan Scala Association
+<ul>
+<li><a href="https://scala-text.github.io/scala_text/">Scala
+研修テキスト</a>(ドワンゴから寄贈)</li>
+</ul></li>
+<li>Microsoft
+<ul>
+<li><a
+href="https://github.com/microsoft/Data-Science-For-Beginners">microsoft/Data-Science-For-Beginners</a></li>
+<li><a
+href="https://github.com/microsoft/ML-For-Beginners/blob/main/translations/README.ja.md">microsoft/ML-For-Beginners（日本語訳）</a></li>
+<li><a
+href="https://github.com/microsoft/Web-Dev-For-Beginners/blob/main/translations/README.ja.md">microsoft/Web-Dev-For-Beginners（日本語訳）</a></li>
+</ul></li>
+<li>Preferred Networks &amp; キカガク
+<ul>
+<li><a
+href="https://japan-medical-ai.github.io/medical-ai-course-materials/">メディカル
+AI 専門コース オンライン講義資料</a></li>
+</ul></li>
+<li>roadmap.sh
+<ul>
+<li><a href="https://roadmap.sh/">roadmap.sh</a></li>
+</ul></li>
+</ul>
+<h3 id="イベント">イベント</h3>
+<ul>
+<li><a
+href="https://kiban.doorkeeper.jp/events/5291">師弟登壇・新米サムライの集い
+2013</a>
+<ul>
+<li><a
+href="https://togetter.com/li/577252">師弟登壇・新米サムライの集い 2013
+まとめ</a></li>
+</ul></li>
+<li><a href="https://pepabo.connpass.com/event/22180/">師弟登壇 2015</a>
+<ul>
+<li><a
+href="http://qiita.com/shimoju/items/018c23db041bb7745647">#師弟登壇
+2015 のメモ書き</a></li>
+</ul></li>
+<li><a href="https://pepabo.connpass.com/event/73020/">師弟登壇
+2017</a></li>
+<li><a href="https://pepabo.connpass.com/event/74938/">師弟登壇 2018</a>
+<ul>
+<li><a href="https://togetter.com/li/1192074">#師弟登壇 2018
+ツイートまとめ</a></li>
+</ul></li>
+<li><a href="http://labs.septeni.co.jp/entry/2018/07/03/174648">新宿
+Geek Lounge#5 新卒・中途研修 Meetup</a></li>
+<li><a href="https://connpass.com/event/122422/">エンジニアの新人研修
+Night</a>
+<ul>
+<li><a
+href="https://tamochang.hatenablog.com/entry/2019/05/24/235949">エンジニア新人研修
+night に参加して</a></li>
+</ul></li>
+<li><a
+href="https://note.com/midastechreview/n/n9521e1ef25b0">VSS#1「アンドパッド、FiNC、ミクシィの新人若手エンジニア成長戦略」</a></li>
+</ul>
+<h3 id="読み物">読み物</h3>
+<ul>
+<li><a
+href="http://qiita.com/hirokidaichi/items/27c757d92b6915e8ecf7">ペアプログラミングして気がついた新人プログラマの成長を阻害する悪習</a></li>
+</ul>
+<p>from
+https://gist.github.com/gcchaan/02f4746a323acac4095c30e0783a3912</p>
+  </div>
+</body>
+</html>
